@@ -12,6 +12,7 @@ import com.intellij.psi.*
 class JavaXVarTypeHintFolderBuilder : FoldingBuilderEx() {
 	override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> {
 		val ret = ArrayList<FoldingDescriptor>()
+		if(root.hasNoError)
 		root.children.filterIsInstance<PsiClass>().forEach {
 			it.children.filterIsInstance<PsiMethod>().forEach {
 				it.children.first { it is PsiCodeBlock }

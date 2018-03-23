@@ -1,6 +1,7 @@
 package com.github.zxj5470.javaxhint
 
 import com.intellij.psi.*
+import com.intellij.psi.util.PsiTreeUtil
 
 /**
  * @author: zxj5470
@@ -54,3 +55,5 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 		}
 		else -> Triple(false, null, null)
 	}
+
+val PsiElement.hasNoError get() = (this as? StubBasedPsiElement<*>)?.stub != null || !PsiTreeUtil.hasErrorElements(this)
