@@ -37,9 +37,11 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 intellij {
-    version "181.4203.519"
+    updateSinceUntilBuild false
+    instrumentCode true
+    version "2017.3"
 }
 patchPluginXml {
-    changeNotes """"""
+    changeNotes(file("src/main/resources/META-INF/changeNotes.html").text)
     pluginDescription(file("src/main/resources/META-INF/description.html").text)
 }

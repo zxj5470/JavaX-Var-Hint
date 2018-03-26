@@ -4,7 +4,6 @@
     <vendor email="zxj5470@foxmail.com" url="https://www.github.com/zxj5470/JavaX-Var-Hint">zxj5470</vendor>
     <idea-version since-build="162.0"/>
     <depends>com.intellij.modules.java</depends>
-    <depends>com.intellij.modules.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
         <lang.foldingBuilder
                 id="com.github.zxj5470.javaxhint.JavaXVarTypeHintFolderBuilder"
