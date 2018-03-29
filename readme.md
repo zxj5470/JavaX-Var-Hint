@@ -12,3 +12,6 @@ Press `Ctrl -` (or `Command -` on Mac) on a line or reopen a Java 10 file.
 	  
 # ScreenShot
 ![gif](pic/gif.gif)
+
+## Update R-Value like `stream` or a `int` return type
+![gif](pic/gif.png)

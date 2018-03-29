@@ -43,7 +43,9 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 						}
 					}
 				if (boolean) {
+					// fold the whitespace as a typeHint
 					elem?.nextSibling?.let {
+						// if next is not a whitespace but a assign symbol, fold it.
 						if (it.text == "=") {
 							elem = elem?.nextSibling
 							typeText = " : $typeText ="
