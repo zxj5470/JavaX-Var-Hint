@@ -16,7 +16,7 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 			var elem: PsiElement? = null
 			element.declaredElements.first().let {
 				it.children
-					.filter { it is PsiIdentifier || it is PsiTypeElement || it is PsiJavaCodeReferenceElement || it is PsiNewExpression || it is PsiLiteralExpression }
+					.filter { it is PsiIdentifier || it is PsiTypeElement || it.typeFilter }
 					.forEach {
 						when (it) {
 							is PsiTypeElement, is PsiJavaCodeReferenceElement -> {
@@ -35,6 +35,9 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 								}
 							}
 							is PsiLiteralExpression -> {
+								typeText = it.type?.presentableText
+							}
+							is PsiMethodCallExpression -> {
 								typeText = it.type?.presentableText
 							}
 						}
@@ -57,3 +60,10 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 	}
 
 val PsiElement.hasNoError get() = (this as? StubBasedPsiElement<*>)?.stub != null || !PsiTreeUtil.hasErrorElements(this)
+
+val PsiElement.typeFilter
+	get() =
+		this is PsiJavaCodeReferenceElement
+			|| this is PsiNewExpression
+			|| this is PsiLiteralExpression
+			|| this is PsiMethodCallExpression
