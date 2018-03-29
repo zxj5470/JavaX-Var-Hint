@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.30'
+    ext.kotlin_version = '1.2.31'
 
     repositories {
         mavenCentral()
@@ -10,7 +10,14 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.intellij' version '0.3.0'
+    id 'idea'
+    id 'org.jetbrains.intellij' version '0.3.1'
+}
+
+idea {
+    module {
+        excludeDirs = excludeDirs + file("pic")
+    }
 }
 
 group 'com.github.zxj5470'
@@ -36,11 +43,13 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
 intellij {
     updateSinceUntilBuild false
     instrumentCode true
     version "2017.3"
 }
+
 patchPluginXml {
     changeNotes(file("src/main/resources/META-INF/changeNotes.html").text)
     pluginDescription(file("src/main/resources/META-INF/description.html").text)

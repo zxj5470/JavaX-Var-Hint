@@ -31,7 +31,7 @@ fun findVarDeclaration(element: PsiElement): Triple<Boolean, PsiElement?, String
 							is PsiNewExpression -> {
 								typeText = it.type?.presentableText
 								if (it.children.any { it is PsiAnonymousClass }) {
-									typeText = "< anonymous extends $typeText >"
+									typeText = "< ? extends $typeText >"
 								}
 							}
 							is PsiLiteralExpression -> {
