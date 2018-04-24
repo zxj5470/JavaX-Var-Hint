@@ -1,7 +1,6 @@
 # Java 10 Var Type Hint 
-# Pending ……
-[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/v/10557-javax-var-type-hint.svg)](https://plugins.jetbrains.com/plugin/10557-javax-var-type-hint)
-[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/d/10557-javax-var-type-hint.svg)](https://plugins.jetbrains.com/plugin/10557-javax-var-type-hint)
+[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/v/10557-javax-var-type-hint.svg?style=flat-square)](https://plugins.jetbrains.com/plugin/10557-javax-var-type-hint)
+[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/d/10557-javax-var-type-hint.svg?style=flat-square)](https://plugins.jetbrains.com/plugin/10557-javax-var-type-hint)
 
 # Usage
 Press `Ctrl -` (or `Command -` on Mac) on a line or reopen a Java 10 file.
